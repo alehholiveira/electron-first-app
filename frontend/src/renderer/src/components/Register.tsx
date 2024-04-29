@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { BiUser } from 'react-icons/bi'
 import { AiOutlineLock } from 'react-icons/ai'
+import { IoHomeOutline } from "react-icons/io5";
+
 
 export default function Register(): JSX.Element {
   return (
@@ -48,6 +50,55 @@ export default function Register(): JSX.Element {
             </label>
             <AiOutlineLock className=" absolute top-0 right-4" />
           </div>
+          <div className="relative my-4">
+            <input
+              className="block w-72 py-2.3 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearnce-none dark:focus:border-blue-500 focus: outline-none focus:ring-0 focus:text-white focus:border-blue-600 peer"
+            />
+            <label
+              htmlFor=""
+              className="absolute text-sm text-white duration-300  transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer placeholder-shown:scale-100 peer-placeholder-shown:trasnlate-y-0 peer-focus:sacale-75 peer-focus:-translate-y-6 "
+            >
+              CEP
+            </label>
+            <IoHomeOutline className=" absolute top-0 right-4" />
+          </div>
+          <div className="relative my-4">
+            <input
+              className="block w-72 py-2.3 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearnce-none dark:focus:border-blue-500 focus: outline-none focus:ring-0 focus:text-white focus:border-blue-600 peer"
+            />
+            <label
+              htmlFor=""
+              className="absolute text-sm text-white duration-300  transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer placeholder-shown:scale-100 peer-placeholder-shown:trasnlate-y-0 peer-focus:sacale-75 peer-focus:-translate-y-6 "
+            >
+              Cidade
+            </label>
+            <IoHomeOutline className=" absolute top-0 right-4" />
+          </div>
+          <div className="relative my-4">
+            <input
+              className="block w-72 py-2.3 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearnce-none dark:focus:border-blue-500 focus: outline-none focus:ring-0 focus:text-white focus:border-blue-600 peer"
+            />
+            <label
+              htmlFor=""
+              className="absolute text-sm text-white duration-300  transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer placeholder-shown:scale-100 peer-placeholder-shown:trasnlate-y-0 peer-focus:sacale-75 peer-focus:-translate-y-6 "
+            >
+              Bairro
+            </label>
+            <IoHomeOutline className=" absolute top-0 right-4" />
+          </div>
+          <div className="relative my-4">
+            <input
+
+              className="block w-72 py-2.3 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearnce-none dark:focus:border-blue-500 focus: outline-none focus:ring-0 focus:text-white focus:border-blue-600 peer"
+            />
+            <label
+              htmlFor=""
+              className="absolute text-sm text-white duration-300  transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer placeholder-shown:scale-100 peer-placeholder-shown:trasnlate-y-0 peer-focus:sacale-75 peer-focus:-translate-y-6 "
+            >
+              Rua
+            </label>
+            <IoHomeOutline className=" absolute top-0 right-4" />
+          </div>
 
           <button
             className="w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300 "
@@ -66,5 +117,9 @@ export default function Register(): JSX.Element {
         </form>
       </div>
     </div>
+
+
+
+    
   )
 }
