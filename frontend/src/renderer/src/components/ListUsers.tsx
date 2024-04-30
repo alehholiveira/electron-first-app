@@ -2,48 +2,117 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BiUser } from 'react-icons/bi';
 
-export default function ListUsers(): JSX.Element { const [users, setUsers] = useState<any[]>([]); // Estado para armazenar os usuários
+const people = [
+  {
+    name: 'Leslie Alexander',
+    email: 'leslie.alexander@example.com',
+    role: 'Co-Founder / CEO',
+    imageUrl:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z',
+  },
+  {
+    name: 'Michael Foster',
+    email: 'michael.foster@example.com',
+    role: 'Co-Founder / CTO',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z',
+  },
+  {
+    name: 'Dries Vincent',
+    email: 'dries.vincent@example.com',
+    role: 'Business Relations',
+    imageUrl:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: null,
+  },
+  {
+    name: 'Lindsay Walton',
+    email: 'lindsay.walton@example.com',
+    role: 'Front-end Developer',
+    imageUrl:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z',
+  },
+  {
+    name: 'Courtney Henry',
+    email: 'courtney.henry@example.com',
+    role: 'Designer',
+    imageUrl:
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z',
+  },
+  {
+    name: 'Tom Cook',
+    email: 'tom.cook@example.com',
+    role: 'Director of Product',
+    imageUrl:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: null,
+  },
+]
 
-useEffect(() => {
-  // Função para buscar os usuários da API
-  const fetchUsers = async () => {
-    try {
-      // Faz a requisição GET para a rota /users da sua API
-      const response = await axios.get('http://localhost:3333/users', {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('jwt')}`,
-        },
-      })
-      // Define os usuários recebidos na resposta no estado de usuários
-      setUsers(response.data);
-    } catch (error) {
-      console.error('Erro ao buscar usuários:', error);
-    }
-  };
 
-  // Chama a função para buscar os usuários ao montar o componente
-  fetchUsers();
-}, []);
+export default function ListUsers(): JSX.Element {
+  const [users, setUsers] = useState<any[]>([]); // Estado para armazenar os usuários
 
-return (
-  <div>
-    <div className="bg-slate-800 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative">
-      <h1 className="text-4xl text-white font-bold text-center mb-6">Login</h1>
-      {/* Restante do seu formulário aqui */}
-      
-      {/* Renderiza a lista de usuários */}
-      <div>
-        <h2>Usuários:</h2>
-        <ul>
-          {users.map((user) => (
-            <li key={user.id}>
-              <BiUser className="inline-block mr-2" />
-              {user.name} - {user.email} {/* Supondo que as informações do usuário são acessíveis */}
-            </li>
-          ))}
-        </ul>
-      </div>
+  useEffect(() => {
+    // Função para buscar os usuários da API
+    const fetchUsers = async () => {
+      try {
+        // Faz a requisição GET para a rota /users da sua API
+        const response = await axios.get('http://localhost:3333/users', {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+          },
+        })
+        // Define os usuários recebidos na resposta no estado de usuários
+        setUsers(response.data);
+      } catch (error) {
+        console.error('Erro ao buscar usuários:', error);
+      }
+    };
+
+    // Chama a função para buscar os usuários ao montar o componente
+    fetchUsers();
+  }, []);
+
+  return (
+    <div className="bg-blue rounded-lg p-6 shadow-xl" style={{ backgroundColor: "white" }}>
+      <ul role="list" className="divide-y divide-slate-600">
+        {people.map((person) => (
+          <li key={person.email} className="flex justify-between gap-x-6 py-5">
+            <div className="flex min-w-0 gap-x-4">
+              <BiUser className="h-12 w-12 flex-none rounded-full bg-transparent" />
+              <div className="min-w-0 flex-auto">
+                <p className="text-sm font-semibold leading-6 text-white">{person.name}</p>
+                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{person.email}</p>
+              </div>
+            </div>
+            <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+              <p className="text-sm leading-6 text-white">{person.role}</p>
+              {person.lastSeen ? (
+                <p className="mt-1 text-xs leading-5 text-gray-500">
+                  Last seen <time dateTime={person.lastSeenDateTime}>{person.lastSeen}</time>
+                </p>
+              ) : (
+                <div className="mt-1 flex items-center gap-x-1.5">
+                  <div className="flex-none rounded-full bg-emerald-500/20 p-1">
+                    <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  </div>
+                  <p className="text-xs leading-5 text-gray-500">Online</p>
+                </div>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
-  </div>
-);
+
+  );
 }
