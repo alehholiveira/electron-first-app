@@ -28,32 +28,32 @@ export async function UserRoutes(app: FastifyInstance) {
     // rota para login
     app.post('/login', async (request, reply) => {
         const { email, password } = LoginSchema.parse(request.body);
-
+      
         const user = await prisma.user.findFirst({
-            where: {
-                email
-            }
+          where: {
+            email
+          }
         });
-
+      
         if (!user) {
-            return reply.status(404).send({ err: 'Usuário não encontrado' });
+          return reply.status(404).send({ err: 'Usuário não encontrado' });
         }
-
+      
         const correctUser = bcrypt.compareSync(password, user.password);
-
+      
         if (!correctUser) {
-            return reply.status(400).send({ err: 'Senha incorreta' });
+          return reply.status(400).send({ err: 'Senha incorreta' });
         }
-
+      
         try {
-            //const token = jwt.sign({id: user.id, login: user.login}, secret, {expiresIn: '12h'});
-            const token = await reply.jwtSign({ login: user.email }, { sign: { sub: user.id } });
-            return reply.send({ token });
+          // Gera um token JWT com uma duração de 30 minutos
+          const token = await reply.jwtSign({ login: user.email }, { sign: { expiresIn: '30m', sub: user.id } });
+          return reply.send({ token });
         } catch (err) {
-            return reply.status(400).send({ msg: 'Falha interna', err });
+          return reply.status(400).send({ msg: 'Falha interna', err });
         }
-    });
-
+      });
+      
     // rota para criar usuario
     app.post("/create/users", async (request, reply) => {
         try {
