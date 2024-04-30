@@ -55,7 +55,7 @@ export async function UserRoutes(app: FastifyInstance) {
     });
 
     // rota para criar usuario
-    app.post("/create/users", { onRequest: [verifyJwt] }, async (request, reply) => {
+    app.post("/create/users", async (request, reply) => {
         try {
             const userData = UserSchema.parse(request.body);
             const salt = bcrypt.genSaltSync(10);
@@ -74,7 +74,7 @@ export async function UserRoutes(app: FastifyInstance) {
             return reply.status(201).send(newUser);
         } catch (error) {
             // Se os dados não estiverem no formato esperado, retorna uma resposta de erro com status 400
-            return reply.status(400).send({ erro: "erro ao criar o usuario" });
+            return reply.status(400).send(error);
         }
     });
 
