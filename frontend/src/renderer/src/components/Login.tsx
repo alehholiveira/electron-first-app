@@ -62,13 +62,6 @@ export default function Login(): JSX.Element {
             </label>
             <AiOutlineLock className=" absolute top-0 right-4" />
           </div>
-          <div className="flex justify-between items-center">
-            <div className="flex gap-2 items-center">
-              <input type="checkbox" name="" id="" />
-              <label htmlFor="Se-Lembrar">Lembrar</label>
-            </div>
-            {/* <Link to="" className="text-blue-500">Esqueceu a senha</Link > */}
-          </div>
           <button
             className="w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300 "
             type="submit"
