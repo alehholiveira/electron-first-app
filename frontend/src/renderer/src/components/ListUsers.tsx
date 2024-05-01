@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BiUser } from 'react-icons/bi';
+import Dropdown from './dropdown';
 
 export default function ListUsers(): JSX.Element {
   const [users, setUsers] = useState<any[]>([]); // Estado para armazenar os usuários
@@ -35,18 +36,19 @@ export default function ListUsers(): JSX.Element {
 
 
   return (
-    <div className="bg-blue rounded-lg p-6 shadow-xl w-[50%]" style={{ backgroundColor: "white" }}>
-      <ul role="list" className="divide-y divide-slate-600">
+<div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg p-6 shadow-xl  " >      
+<ul role="list" className="divide-y divide-slate-600">
         {users.map((user) => (
           <li key={user.id} className="flex justify-between gap-x-6 py-5">
             <div className="flex min-w-0 gap-x-4">
               <BiUser className="h-12 w-12 flex-none rounded-full bg-transparent" />
               <div className="min-w-0 flex-auto">
                 <p className="text-sm font-semibold leading-6 text-black-50">{user.name}</p>
-                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{user.email}</p>
-                <p className="text-sm leading-6 text-gray-500">{user.cepInfo.logradouro}, {user.cepInfo.bairro}, {user.cepInfo.localidade} - {user.cepInfo.uf}</p>
+                <p className="mt-1 truncate text-xs leading-5 text-stone-50">{user.email}</p>
+                <p className="text-sm leading-6 text-stone-50">{user.cepInfo.logradouro}, {user.cepInfo.bairro}, {user.cepInfo.localidade} - {user.cepInfo.uf}</p>
               </div>
             </div>
+            <Dropdown></Dropdown> 
           </li>
         ))}
       </ul>

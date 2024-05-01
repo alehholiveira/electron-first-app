@@ -6,8 +6,7 @@ import ListUsers from './components/ListUsers'
 export default function App(): JSX.Element {
   return (
     <>
-     <div className="text-slate-600 h-[100vh] flex justify-center items-center" style={{backgroundColor:"#D8CBDB"}} >
-
+<div className="text-zinc-50 h-[100vh] flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 " >
         <Router>
           <Routes>
             <Route path="/" element={<Login />} />
