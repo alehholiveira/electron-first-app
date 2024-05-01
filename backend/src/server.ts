@@ -17,6 +17,6 @@ app.register(fastifyJwt, {
 	secret: 'askjdkas 21873561872v787812t312 1267vsdrasd 121276fe612r37612r6712r867'
 });
 
-app.listen({ port: 3333 }).then(() => {
+app.listen({ port: 3333,host: '0.0.0.0' }).then(() => {
     console.log("HTTP server is running!!")
 })
