@@ -69,10 +69,10 @@ export default function Login(): JSX.Element {
             Login
           </button>
           <div>
-            <span className="m-4">
+            <span className="m-1">
               Não tem Conta?{' '}
-              <Link className="text-blue-500" to="/register">
-                Criar Conta
+              <Link className="fixed right-10 text-blue-500 " to="/register">
+              Criar Conta
               </Link>
             </span>
           </div>
