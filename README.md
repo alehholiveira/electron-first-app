@@ -4,16 +4,16 @@
 Este projeto foi desenvolvido para gerenciar cadastro de usuários usando ElectronJS, Node.js, TypeScript, Prisma, Docker, PostgreSQL, entre outras tecnologias.
 
 ## Frameworks e Tecnologias Utilizadas
-- **Node.js**: Ambiente de execução JavaScript do lado do servidor.
-- **TypeScript**: Um superset do JavaScript que adiciona tipos estáticos.
-- **Prisma**: Ferramenta ORM para acessar e interagir com bancos de dados.
-- **Docker**: Plataforma para contêineres.
-- **PostgreSQL**: Banco de dados relacional conhecido por robustez e escalabilidade.
-- **ElectronJS**: Framework para criar aplicativos desktop usando tecnologias da web.
+- ![Node.js](https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png) **Node.js**: Um ambiente de execução JavaScript do lado do servidor.
+- ![TypeScript](https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg) **TypeScript**: Um superset do JavaScript que adiciona tipos estáticos.
+- ![Prisma](https://cdn.worldvectorlogo.com/logos/prisma-3.svg) **Prisma**: Ferramenta ORM para acessar e interagir com bancos de dados.
+- ![Docker](https://w7.pngwing.com/pngs/991/165/png-transparent-docker-hd-logo-thumbnail.png) **Docker**: Uma plataforma para contêineres usada para rodar serviços isolados.
+- ![PostgreSQL](https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg) **PostgreSQL**: Um sistema de gerenciamento de banco de dados relacional.
+- ![ElectronJS](https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg) **ElectronJS**: Framework para criar aplicativos desktop usando tecnologias da web.
 - **Jest**: Biblioteca usada para o desenvolvimento do TDD.
 
 ## Instruções para Execução
-Para clonar e configurar o projeto, siga os passos abaixo:
+Primeiramente certifique-se de que o docker esta aberto em seguida:
 
 1. **Clone o Repositório**
    Abra um terminal, vá para a pasta onde deseja clonar o repositório e execute o seguinte comando:
