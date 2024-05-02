@@ -13,7 +13,7 @@ Este projeto foi desenvolvido para gerenciar cadastro de usuários usando Electr
 - <img src="https://docs.knapsackpro.com/images/blog/posts/run-jest-on-github-actions-with-parallelization/jest.png" alt="ElectronJS" width="24" height="24"> **Jest**: Biblioteca usada para o desenvolvimento do TDD.
 
 ## Instruções para Execução
-Primeiramente certifique-se de que o docker esta aberto em seguida:
+Primeiramente certifique-se de que o docker esta aberto e que o node esta instalado na sua maquina em seguida:
 
 1. **Clone o Repositório**
    Abra um terminal, vá para a pasta onde deseja clonar o repositório e execute o seguinte comando:
