@@ -49,7 +49,7 @@ export default function ListUsers(): JSX.Element {
                 <p className="text-sm leading-6 text-stone-50">{user.cepInfo.logradouro}, {user.cepInfo.bairro}, {user.cepInfo.localidade} - {user.cepInfo.uf}</p>
               </div>
             </div>
-              <DropdownMenu userId={user.id}/>
+              <DropdownMenu user={user}/>
           </li>
         ))}
       </ul>
