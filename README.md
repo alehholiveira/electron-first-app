@@ -10,7 +10,7 @@ Este projeto foi desenvolvido para gerenciar cadastro de usuários usando Electr
 - <img src="https://w7.pngwing.com/pngs/991/165/png-transparent-docker-hd-logo-thumbnail.png" alt="Docker" width="24" height="24"> **Docker**: Uma plataforma para contêineres usada para rodar serviços isolados.
 - <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL" width="24" height="24"> **PostgreSQL**: Um sistema de gerenciamento de banco de dados relacional.
 - <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg" alt="ElectronJS" width="24" height="24"> **ElectronJS**: Framework para criar aplicativos desktop usando tecnologias da web.
-- <img src="[https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg](https://docs.knapsackpro.com/images/blog/posts/run-jest-on-github-actions-with-parallelization/jest.png)" alt="ElectronJS" width="24" height="24"> **Jest**: Biblioteca usada para o desenvolvimento do TDD.
+- <img src="https://docs.knapsackpro.com/images/blog/posts/run-jest-on-github-actions-with-parallelization/jest.png" alt="ElectronJS" width="24" height="24"> **Jest**: Biblioteca usada para o desenvolvimento do TDD.
 
 ## Instruções para Execução
 Primeiramente certifique-se de que o docker esta aberto em seguida:
