@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BiUser } from 'react-icons/bi';
-import Dropdown from './dropdown';
+import DropdownMenu from './DropdownMenu';
+
 
 export default function ListUsers(): JSX.Element {
   const [users, setUsers] = useState<any[]>([]); // Estado para armazenar os usuários
@@ -36,8 +37,8 @@ export default function ListUsers(): JSX.Element {
 
 
   return (
-<div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg p-6 shadow-xl  " >      
-<ul role="list" className="divide-y divide-slate-600">
+    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg p-6 shadow-xl  " >
+      <ul role="list" className="divide-y divide-slate-600">
         {users.map((user) => (
           <li key={user.id} className="flex justify-between gap-x-6 py-5">
             <div className="flex min-w-0 gap-x-4">
@@ -48,7 +49,7 @@ export default function ListUsers(): JSX.Element {
                 <p className="text-sm leading-6 text-stone-50">{user.cepInfo.logradouro}, {user.cepInfo.bairro}, {user.cepInfo.localidade} - {user.cepInfo.uf}</p>
               </div>
             </div>
-            <Dropdown></Dropdown> 
+              <DropdownMenu userId={user.id}/>
           </li>
         ))}
       </ul>
