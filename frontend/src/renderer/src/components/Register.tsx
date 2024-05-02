@@ -53,7 +53,7 @@ export default function Register(): JSX.Element {
               htmlFor=""
               className="absolute text-sm text-white duration-300  transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer placeholder-shown:scale-100 peer-placeholder-shown:trasnlate-y-0 peer-focus:sacale-75 peer-focus:-translate-y-6 "
             >
-              Name
+              Nome
             </label>
             <BiUser className=" absolute top-0 right-4" />
           </div>
