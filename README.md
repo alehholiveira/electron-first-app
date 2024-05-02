@@ -4,12 +4,12 @@
 Este projeto foi desenvolvido para gerenciar cadastro de usuários usando ElectronJS, Node.js, TypeScript, Prisma, Docker, PostgreSQL, entre outras tecnologias.
 
 ## Frameworks e Tecnologias Utilizadas
-- ![Node.js](https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png) **Node.js**: Um ambiente de execução JavaScript do lado do servidor.
-- ![TypeScript](https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg) **TypeScript**: Um superset do JavaScript que adiciona tipos estáticos.
-- ![Prisma](https://cdn.worldvectorlogo.com/logos/prisma-3.svg) **Prisma**: Ferramenta ORM para acessar e interagir com bancos de dados.
-- ![Docker](https://w7.pngwing.com/pngs/991/165/png-transparent-docker-hd-logo-thumbnail.png) **Docker**: Uma plataforma para contêineres usada para rodar serviços isolados.
-- ![PostgreSQL](https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg) **PostgreSQL**: Um sistema de gerenciamento de banco de dados relacional.
-- ![ElectronJS](https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg) **ElectronJS**: Framework para criar aplicativos desktop usando tecnologias da web.
+- <img src="https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png" alt="Node.js" width="24" height="24"> **Node.js**: Um ambiente de execução JavaScript do lado do servidor.
+- <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript" width="24" height="24"> **TypeScript**: Um superset do JavaScript que adiciona tipos estáticos.
+- <img src="https://cdn.worldvectorlogo.com/logos/prisma-3.svg" alt="Prisma" width="24" height="24"> **Prisma**: Ferramenta ORM para acessar e interagir com bancos de dados.
+- <img src="https://w7.pngwing.com/pngs/991/165/png-transparent-docker-hd-logo-thumbnail.png" alt="Docker" width="24" height="24"> **Docker**: Uma plataforma para contêineres usada para rodar serviços isolados.
+- <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL" width="24" height="24"> **PostgreSQL**: Um sistema de gerenciamento de banco de dados relacional.
+- <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg" alt="ElectronJS" width="24" height="24"> **ElectronJS**: Framework para criar aplicativos desktop usando tecnologias da web.
 - **Jest**: Biblioteca usada para o desenvolvimento do TDD.
 
 ## Instruções para Execução
