@@ -10,6 +10,7 @@ Este projeto foi desenvolvido para gerenciar cadastro de usuários usando Electr
 - **Docker**: Plataforma para contêineres.
 - **PostgreSQL**: Banco de dados relacional conhecido por robustez e escalabilidade.
 - **ElectronJS**: Framework para criar aplicativos desktop usando tecnologias da web.
+- **Jest**: Biblioteca usada para o desenvolvimento do TDD.
 
 ## Instruções para Execução
 Para clonar e configurar o projeto, siga os passos abaixo:
@@ -18,3 +19,23 @@ Para clonar e configurar o projeto, siga os passos abaixo:
    Abra um terminal, vá para a pasta onde deseja clonar o repositório e execute o seguinte comando:
    ```bash
    git clone https://github.com/alehholiveira/electron-first-app.git
+2. **Entre no repositório**
+   ```bash
+   cd electron-first-app
+3. **Entre no diretório backend**
+   ```bash
+   cd backend
+4. **Dentro do backend executar os seguintes comandos**
+   executar na ordem
+   ```bash
+   npm install
+   docker compose up -d
+   npx prisma migrate dev
+   npm run dev
+5. **Agora deve sair da pasta backend e sair da frontend**
+    executar na ordem
+   ```bash
+   npm install
+   npm run dev
+6.**Pronto seu projeto ja pode ser usado**
+   
