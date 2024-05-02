@@ -32,9 +32,11 @@ Para clonar e configurar o projeto, siga os passos abaixo:
    docker compose up -d
    npx prisma migrate dev
    npm run dev
-5. **Agora deve sair da pasta backend e sair da frontend**
+5. **Agora deve sair da pasta backend e entrar na frontend**
     executar na ordem
    ```bash
+   cd ..
+   cd frontend
    npm install
    npm run dev
 6.**Pronto seu projeto ja pode ser usado**
