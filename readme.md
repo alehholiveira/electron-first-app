@@ -28,7 +28,7 @@ Primeiramente certifique-se de que o Docker esta aberto e que o ode esta instala
 4. **Execute o frontend**
    `É necessário abrir outro terminal simultaneamente`
    ```bash
-   
+   cd electron-first-app
    npm run frontend
 6.**Pronto, o projeto já pode ser usado**
    
