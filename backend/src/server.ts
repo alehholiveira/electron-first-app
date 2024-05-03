@@ -3,7 +3,7 @@ import { UserRoutes } from "./routes/user-routes";
 import fastifyJwt from "@fastify/jwt";
 import fastifyCors from "@fastify/cors";
 
-const app = fastify()
+export const app = fastify()
 
 app.register(fastifyCors, {
     // Configurações opcionais do CORS
