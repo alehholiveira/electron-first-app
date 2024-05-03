@@ -2,31 +2,36 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react'
 import { BiUser } from 'react-icons/bi';
 import { IoHomeOutline } from 'react-icons/io5';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import axios from 'axios';
 
-export default function Dropdown({ user }): JSX.Element {
+export default function Dropdown({ user, refreshUsers }): JSX.Element {
     const [name, setName] = useState('');
     const email = user.email
     const password = user.password
-    const [cep,setCep] = useState ('');
-  
+    const [cep, setCep] = useState('');
+    const closeRef = useRef<HTMLButtonElement>(null);
+
     const handleSubmit = async (event) => {
-      event.preventDefault();
-      try {
-        const response = await axios.put(
-            `http://localhost:3333/edit/users/${user.id}`,
-            { name, email, password, cep },
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem('jwt')}`,
-              },
+        event.preventDefault();
+        try {
+            const response = await axios.put(
+                `http://localhost:3333/edit/users/${user.id}`,
+                { name, email, password, cep },
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+                    },
+                }
+            );
+            console.log(response.data);
+            refreshUsers();
+            if (closeRef.current) {
+                closeRef.current.click();
             }
-          );
-        console.log(response.data); 
-      } catch (error) {
-        console.error('Erro ao fazer cadastro:', error);
-      }
+        } catch (error) {
+            console.error('Erro ao fazer cadastro:', error);
+        }
     };
 
     return (
@@ -44,13 +49,13 @@ export default function Dropdown({ user }): JSX.Element {
             <Dialog.Portal>
                 <Dialog.Overlay className=' inset-0 fixed bg-black/50' />
                 <Dialog.Content className='fixed overflow-hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-50% to-indigo-500 to-100%" max-w-[640px] w-full h-[60vh] rounded-md flex flex-col outline-none'>
-                    <Dialog.Close className='absolute right-0 top-0 bg-indigo-500 p-1.5 text-slate-100 rounded-md'>
+                    <Dialog.Close ref={closeRef} className='absolute right-0 top-0 bg-indigo-500 p-1.5 text-slate-100 rounded-md'>
                         <X className='size-5' />
                     </Dialog.Close>
 
                     <div className='flex flex-1 flex-col gap-3 p-5 justify-center items-center'>
                         <h1 className="text-4xl text-white font-bold text-center mb-6">Atualizar informações</h1>
-                        <form onSubmit={handleSubmit}> 
+                        <form onSubmit={handleSubmit}>
                             <div className="relative my-4">
                                 <input
                                     type="Nome"
@@ -80,11 +85,11 @@ export default function Dropdown({ user }): JSX.Element {
                                 <IoHomeOutline className=" absolute top-0 right-4" />
                             </div>
                             <button
-                        type='submit'
-                        className='w-full bg-white py-4 text-center rounded-full text-md text-slate-300 outline-none font-medium group mb-1 '
-                    >
-                        <span className=' text-emerald-500 group-hover:underline'>Atualizar</span>
-                    </button>
+                                type='submit'
+                                className='w-full bg-white py-4 text-center rounded-full text-md text-slate-300 outline-none font-medium group mb-1 '
+                            >
+                                <span className=' text-emerald-500 group-hover:underline'>Atualizar</span>
+                            </button>
                         </form>
                     </div>
 

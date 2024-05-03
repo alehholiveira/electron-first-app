@@ -7,33 +7,34 @@ import DropdownMenu from './DropdownMenu';
 export default function ListUsers(): JSX.Element {
   const [users, setUsers] = useState<any[]>([]); // Estado para armazenar os usuários
 
+
+  // Função para buscar os usuários da API
+  const fetchUsers = async () => {
+    try {
+      // Faz a requisição GET para a rota /users da sua API
+      const response = await axios.get('http://localhost:3333/users', {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        },
+      });
+
+      // Para cada usuário, faz uma requisição para a API do CEP
+      const usersWithCepInfo = await Promise.all(response.data.map(async (user) => {
+        const cepResponse = await axios.get(`https://viacep.com.br/ws/${user.cep}/json/`);
+        return { ...user, cepInfo: cepResponse.data };
+      }));
+
+      // Define os usuários com as informações do CEP no estado de usuários
+      setUsers(usersWithCepInfo);
+    } catch (error) {
+      console.error('Erro ao buscar usuários:', error);
+    }
+  };
   useEffect(() => {
-    // Função para buscar os usuários da API
-    const fetchUsers = async () => {
-      try {
-        // Faz a requisição GET para a rota /users da sua API
-        const response = await axios.get('http://localhost:3333/users', {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('jwt')}`,
-          },
-        });
-
-        // Para cada usuário, faz uma requisição para a API do CEP
-        const usersWithCepInfo = await Promise.all(response.data.map(async (user) => {
-          const cepResponse = await axios.get(`https://viacep.com.br/ws/${user.cep}/json/`);
-          return { ...user, cepInfo: cepResponse.data };
-        }));
-
-        // Define os usuários com as informações do CEP no estado de usuários
-        setUsers(usersWithCepInfo);
-      } catch (error) {
-        console.error('Erro ao buscar usuários:', error);
-      }
-    };
-
     // Chama a função para buscar os usuários ao montar o componente
     fetchUsers();
   }, []);
+
 
 
   return (
@@ -49,7 +50,7 @@ export default function ListUsers(): JSX.Element {
                 <p className="text-sm leading-6 text-stone-50">{user.cepInfo.logradouro}, {user.cepInfo.bairro}, {user.cepInfo.localidade} - {user.cepInfo.uf}</p>
               </div>
             </div>
-              <DropdownMenu user={user}/>
+            <DropdownMenu user={user} refreshUsers={fetchUsers} />
           </li>
         ))}
       </ul>

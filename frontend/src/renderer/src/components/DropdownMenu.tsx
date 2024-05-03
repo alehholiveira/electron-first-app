@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import DialogMenu from './DialogMenu';
 
-export default function Dropdown({ user }): JSX.Element {
+export default function Dropdown({ user, refreshUsers }): JSX.Element {
   const [editingUser, setEditingUser] = useState(null);
   const [dialogOpen, setDialogOpen] = useState(false); // Novo estado para controlar a abertura do diálogo
 
@@ -18,6 +18,7 @@ export default function Dropdown({ user }): JSX.Element {
       });
 
       console.log(response.data);
+      refreshUsers();
     } catch (error) {
       console.error('Erro ao deletar usuário:', error);
     }
@@ -30,14 +31,14 @@ export default function Dropdown({ user }): JSX.Element {
           <HamburgerMenuIcon />
         </DropdownMenu.Trigger>
         <DropdownMenu.Content className="bg-white rounded shadow-lg mt-2 text-pink-900 border-2">
-        <DropdownMenu.Item onSelect={() => { setEditingUser(user.id); setDialogOpen(true); }} className="px-4 py-2 hover:bg-gray-200">Editar</DropdownMenu.Item>
+          <DropdownMenu.Item onSelect={() => { setEditingUser(user.id); setDialogOpen(true); }} className="px-4 py-2 hover:bg-gray-200">Editar</DropdownMenu.Item>
           <DropdownMenu.Item onSelect={onDelete} className="px-4 py-2 hover:bg-gray-200">Excluir</DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
 
       {editingUser && (
         <Dialog.Root open={dialogOpen} onOpenChange={(open) => { setDialogOpen(open); if (!open) setEditingUser(null); }}>
-          <DialogMenu user={user} />
+          <DialogMenu user={user} refreshUsers={refreshUsers} />
         </Dialog.Root>
       )}
     </div>
