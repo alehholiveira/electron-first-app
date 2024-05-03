@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "scripts": {
         "frontend": "cd frontend && npm i && npm run dev",
-        "start:back": "cd backend npm i && npx prisma migrate dev && npm run dev",
+        "start:back": "cd backend && npm i && npx prisma migrate dev && npm run dev",
         "start:db": "cd backend && docker compose up -d",
         "backend": "npm run start:db && npm run start:back"
       }
