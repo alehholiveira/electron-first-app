@@ -63,7 +63,7 @@ export default function Login(): JSX.Element {
             <AiOutlineLock className=" absolute top-0 right-4" />
           </div>
           <button
-            className="w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300 "
+            className="w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-emerald-800 hover:bg-sky-500 hover:text-white py-2 transition-colors duration-300 "
             type="submit"
           >
             Login
@@ -71,7 +71,7 @@ export default function Login(): JSX.Element {
           <div>
             <span className="m-1">
               Não tem Conta?{' '}
-              <Link className="fixed right-10 text-blue-500 " to="/register">
+              <Link className="fixed right-10 text-white" to="/register">
               Criar Conta
               </Link>
             </span>

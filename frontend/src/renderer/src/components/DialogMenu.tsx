@@ -88,7 +88,7 @@ export default function Dropdown({ user, refreshUsers }): JSX.Element {
                                 type='submit'
                                 className='w-full bg-white py-4 text-center rounded-full text-md text-slate-300 outline-none font-medium group mb-1 '
                             >
-                                <span className=' text-emerald-500 group-hover:underline'>Atualizar</span>
+                                <span className=' text-sky-500 group-hover:underline'>Atualizar</span>
                             </button>
                         </form>
                     </div>
