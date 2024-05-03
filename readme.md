@@ -30,5 +30,5 @@ Primeiramente certifique-se de que o Docker esta aberto e que o ode esta instala
    ```bash
    cd electron-first-app
    npm run frontend
-6.**Pronto, o projeto já pode ser usado**
+5.**Pronto, o projeto já pode ser usado**
    
